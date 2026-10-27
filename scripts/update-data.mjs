@@ -4,7 +4,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const FILE = new URL('../movies-data.json', import.meta.url);
 const { OMDB_API_KEY: OMDB, TMDB_API_KEY: TMDB } = process.env;
-const MIN = 7.5, MAX_NEW = 8;
+const MIN = 7.0, MAX_NEW = 8;
 if (!OMDB) { console.error('OMDB_API_KEY missing'); process.exit(1); }
 
 const j = async url => { const r = await fetch(url); if (!r.ok) throw new Error(r.status + ' ' + url.split('?')[0]); return r.json(); };
