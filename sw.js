@@ -1,4 +1,4 @@
-const CACHE = 'hdp-v2';
+const CACHE = 'hdp-v3';
 const SHELL = ['./', 'index.html', 'css/styles.css', 'js/app.js', 'manifest.json', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())));

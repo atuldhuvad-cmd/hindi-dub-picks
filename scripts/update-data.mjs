@@ -36,9 +36,10 @@ if (TMDB) {
   const PROV = { 8: 'Netflix', 119: 'Prime Video', 122: 'JioHotstar' };
   const known = new Set(data.items.map(m => m.imdbId));
   let added = 0;
+  const since = new Date(Date.now() - 2 * 365 * 864e5).toISOString().slice(0, 10); // only titles from the last ~2 years
   // Indian-origin passes first so South Indian / Hindi titles aren't crowded out by foreign ones
   for (const [kind, genres, origin] of [['movie', '80,53,35', 'IN'], ['tv', '80,9648,35', 'IN'], ['movie', '80,53,35', ''], ['tv', '80,9648,35', '']]) {
-    const res = await tmdb(`/discover/${kind}`, `${origin ? '&with_origin_country=IN' : ''}&with_genres=${genres.replace(/,/g, '|')}&watch_region=IN&with_watch_providers=8|119|122&with_watch_monetization_types=flatrate&vote_average.gte=${MIN}&vote_count.gte=1000&sort_by=popularity.desc`);
+    const res = await tmdb(`/discover/${kind}`, `${origin ? '&with_origin_country=IN' : ''}&with_genres=${genres.replace(/,/g, '|')}&watch_region=IN&with_watch_providers=8|119|122&with_watch_monetization_types=flatrate&vote_average.gte=${MIN}&vote_count.gte=300&${kind === 'movie' ? 'primary_release_date' : 'first_air_date'}.gte=${since}&sort_by=popularity.desc`);
     for (const t of res.results) {
       if (added >= MAX_NEW) break;
       try {
@@ -53,7 +54,7 @@ if (TMDB) {
         if (g.includes(80) || g.includes(53)) gen.push('Crime Thriller');
         if (g.includes(9648)) gen.push('Suspense');
         if (g.includes(35)) gen.push('Comedy');
-        data.items.push({ title: o.Title, type: kind === 'movie' ? 'Movie' : 'Series', genres: gen, rating, origin: /India/.test(o.Country) ? `India (${o.Language?.split(',')[0] || 'Hindi'})` : o.Country?.split(',')[0] || 'N/A', platform: PROV[p.provider_id], imdbId, new: true });
+        data.items.push({ title: o.Title, type: kind === 'movie' ? 'Movie' : 'Series', genres: gen, rating, origin: /India/.test(o.Country) ? `India (${o.Language?.split(',')[0] || 'Hindi'})` : o.Country?.split(',')[0] || 'N/A', platform: PROV[p.provider_id], imdbId, year: parseInt(o.Year) || new Date().getFullYear(), new: true });
         known.add(imdbId); added++;
       } catch (e) { console.warn('discover failed:', t.id, e.message); }
     }

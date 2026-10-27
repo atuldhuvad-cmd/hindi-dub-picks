@@ -26,7 +26,7 @@ function chips(el, values, key) {
 function card(m) {
   const c = document.createElement('article'); c.className = 'card';
   const mk = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; e.textContent = txt; return e; };
-  const top = mk('div', 'row', ''); top.append(mk('span', 'rate', '★ ' + Number(m.rating).toFixed(1)), mk('span', 'tag', m.type));
+  const top = mk('div', 'row', ''); top.append(mk('span', 'rate', '★ ' + Number(m.rating).toFixed(1)), mk('span', 'tag', m.type + ' · ' + m.year));
   if (m.new) top.append(mk('span', 'tag new', 'NEW'));
   const tags = mk('div', 'row', ''); m.genres.forEach(g => tags.append(mk('span', 'tag', g)));
   const a = mk('a', 'watch', 'Watch on ' + m.platform);
@@ -42,7 +42,7 @@ function render() {
       && (state.platform === 'All' || m.platform === state.platform)
       && (state.region === 'All' || region(m) === state.region)
       && (m.title + ' ' + m.origin).toLowerCase().includes(q))
-    .sort((a, b) => b.rating - a.rating);
+    .sort((a, b) => b.year - a.year || b.rating - a.rating);
   if (list.length) $('grid').replaceChildren(...list.map(card));
   else { const e = document.createElement('p'); e.className = 'empty'; e.textContent = 'No matches.'; $('grid').replaceChildren(e); }
 }
