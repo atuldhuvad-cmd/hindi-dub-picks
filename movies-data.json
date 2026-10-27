@@ -1,69 +1,800 @@
 {
   "updated": "2026-10-27",
   "items": [
-    {"title":"Panchayat","type":"Series","genres":["Comedy"],"rating":9,"origin":"India (Hindi)","platform":"Prime Video","imdbId":"tt12004706","year":2025},
-    {"title":"The Family Man","type":"Series","genres":["Crime Thriller","Comedy"],"rating":8.6,"origin":"India (Hindi)","platform":"Prime Video","imdbId":"tt9544034","year":2025},
-    {"title":"Delhi Crime","type":"Series","genres":["Crime Thriller"],"rating":8.5,"origin":"India (Hindi)","platform":"Netflix","year":2025},
-    {"title":"Black Warrant","type":"Series","genres":["Crime Thriller"],"rating":8.5,"origin":"India (Hindi)","platform":"Netflix","year":2025},
-    {"title":"Dhurandhar","type":"Movie","genres":["Crime Thriller","Suspense"],"rating":8.2,"origin":"India (Hindi)","platform":"Netflix","year":2025,"imdbId":"tt33014583"},
-    {"title":"Squid Game","type":"Series","genres":["Suspense"],"rating":7.9,"origin":"South Korea","platform":"Netflix","imdbId":"tt10919420","year":2025},
-    {"title":"Thudarum","type":"Movie","genres":["Crime Thriller","Suspense"],"rating":8,"origin":"India (Malayalam)","platform":"JioHotstar","year":2025},
-    {"title":"Lupin","type":"Series","genres":["Crime Thriller","Suspense"],"rating":7.5,"origin":"France","platform":"Netflix","imdbId":"tt2531336","year":2025},
-    {"title":"True Detective","type":"Series","genres":["Crime Thriller","Suspense"],"rating":8.8,"origin":"USA","platform":"JioHotstar","imdbId":"tt2356777","year":2024},
-    {"title":"Mirzapur","type":"Series","genres":["Crime Thriller"],"rating":8.4,"origin":"India (Hindi)","platform":"Prime Video","imdbId":"tt6473300","year":2024},
-    {"title":"Asur","type":"Series","genres":["Crime Thriller","Suspense"],"rating":8.4,"origin":"India (Hindi)","platform":"JioHotstar","year":2024},
-    {"title":"Maharaja","type":"Movie","genres":["Crime Thriller","Suspense"],"rating":8.4,"origin":"India (Tamil)","platform":"Netflix","year":2024},
-    {"title":"Lucky Baskhar","type":"Movie","genres":["Crime Thriller"],"rating":8.2,"origin":"India (Telugu)","platform":"Netflix","year":2024},
-    {"title":"Kishkindha Kaandam","type":"Movie","genres":["Suspense","Crime Thriller"],"rating":7.9,"origin":"India (Malayalam)","platform":"JioHotstar","year":2024},
-    {"title":"Aavesham","type":"Movie","genres":["Dark Comedy","Crime Thriller"],"rating":7.7,"origin":"India (Malayalam)","platform":"Prime Video","year":2024},
-    {"title":"Kill","type":"Movie","genres":["Crime Thriller"],"rating":7.6,"origin":"India (Hindi)","platform":"JioHotstar","year":2024},
-    {"title":"Fargo","type":"Series","genres":["Crime Thriller","Dark Comedy"],"rating":8.8,"origin":"USA","platform":"JioHotstar","imdbId":"tt2802850","year":2023},
-    {"title":"Barry","type":"Series","genres":["Dark Comedy","Crime Thriller"],"rating":8.3,"origin":"USA","platform":"JioHotstar","imdbId":"tt5348176","year":2023},
-    {"title":"Laapataa Ladies","type":"Movie","genres":["Comedy"],"rating":8.2,"origin":"India (Hindi)","platform":"Netflix","year":2023},
-    {"title":"Better Call Saul","type":"Series","genres":["Crime Thriller","Dark Comedy"],"rating":9,"origin":"USA","platform":"Netflix","imdbId":"tt3032476","year":2022},
-    {"title":"Peaky Blinders","type":"Series","genres":["Crime Thriller"],"rating":8.7,"origin":"UK","platform":"Netflix","imdbId":"tt2442560","year":2022},
-    {"title":"Ozark","type":"Series","genres":["Crime Thriller"],"rating":8.4,"origin":"USA","platform":"Netflix","imdbId":"tt5071412","year":2022},
-    {"title":"Vikram","type":"Movie","genres":["Crime Thriller"],"rating":8.3,"origin":"India (Tamil)","platform":"JioHotstar","imdbId":"tt9179552","year":2022},
-    {"title":"Kantara","type":"Movie","genres":["Suspense","Crime Thriller"],"rating":8.2,"origin":"India (Kannada)","platform":"Prime Video","imdbId":"tt16539454","year":2022},
-    {"title":"Glass Onion","type":"Movie","genres":["Suspense","Comedy"],"rating":7.1,"origin":"USA","platform":"Netflix","imdbId":"tt11564570","year":2022},
-    {"title":"Special Ops","type":"Series","genres":["Crime Thriller","Suspense"],"rating":8.6,"origin":"India (Hindi)","platform":"JioHotstar","year":2021},
-    {"title":"Money Heist","type":"Series","genres":["Crime Thriller","Suspense"],"rating":8.2,"origin":"Spain","platform":"Netflix","imdbId":"tt6468322","year":2021},
-    {"title":"Dark","type":"Series","genres":["Suspense","Crime Thriller"],"rating":8.7,"origin":"Germany","platform":"Netflix","imdbId":"tt5753856","year":2020},
-    {"title":"Mindhunter","type":"Series","genres":["Crime Thriller","Suspense"],"rating":8.6,"origin":"USA","platform":"Netflix","imdbId":"tt5290382","year":2019},
-    {"title":"Sacred Games","type":"Series","genres":["Crime Thriller","Suspense"],"rating":8.5,"origin":"India (Hindi)","platform":"Netflix","imdbId":"tt6077448","year":2019},
-    {"title":"Kaithi","type":"Movie","genres":["Crime Thriller"],"rating":8.4,"origin":"India (Tamil)","platform":"YouTube","imdbId":"tt10085434","year":2019},
-    {"title":"Knives Out","type":"Movie","genres":["Suspense","Comedy"],"rating":7.9,"origin":"USA","platform":"Netflix","imdbId":"tt8946378","year":2019},
-    {"title":"Badla","type":"Movie","genres":["Suspense","Crime Thriller"],"rating":7.8,"origin":"India (Hindi)","platform":"Netflix","year":2019},
-    {"title":"Ratsasan","type":"Movie","genres":["Suspense","Crime Thriller"],"rating":8.3,"origin":"India (Tamil)","platform":"YouTube","imdbId":"tt7469718","year":2018},
-    {"title":"Andhadhun","type":"Movie","genres":["Dark Comedy","Suspense","Crime Thriller"],"rating":8.2,"origin":"India (Hindi)","platform":"Netflix","imdbId":"tt8108198","year":2018},
-    {"title":"KGF: Chapter 1","type":"Movie","genres":["Crime Thriller"],"rating":8.1,"origin":"India (Kannada)","platform":"Prime Video","imdbId":"tt7838252","year":2018},
-    {"title":"Joseph","type":"Movie","genres":["Crime Thriller","Suspense"],"rating":7.8,"origin":"India (Malayalam)","platform":"YouTube","year":2018},
-    {"title":"Sherlock","type":"Series","genres":["Crime Thriller","Suspense"],"rating":9,"origin":"UK","platform":"Netflix","imdbId":"tt1475582","year":2017},
-    {"title":"Narcos","type":"Series","genres":["Crime Thriller"],"rating":8.8,"origin":"USA / Colombia","platform":"Netflix","imdbId":"tt2707791","year":2017},
-    {"title":"Prison Break","type":"Series","genres":["Crime Thriller","Suspense"],"rating":8.3,"origin":"USA","platform":"JioHotstar","imdbId":"tt0455275","year":2017},
-    {"title":"Vikram Vedha","type":"Movie","genres":["Crime Thriller"],"rating":8.2,"origin":"India (Tamil)","platform":"Prime Video","imdbId":"tt6148156","year":2017},
-    {"title":"The Nice Guys","type":"Movie","genres":["Comedy","Crime Thriller"],"rating":7.4,"origin":"USA","platform":"Prime Video","imdbId":"tt3799694","year":2016},
-    {"title":"Drishyam","type":"Movie","genres":["Suspense","Crime Thriller"],"rating":8.2,"origin":"India (Hindi)","platform":"Prime Video","imdbId":"tt4430212","year":2015},
-    {"title":"Jigarthanda","type":"Movie","genres":["Dark Comedy","Crime Thriller"],"rating":8.2,"origin":"India (Tamil)","platform":"Prime Video","year":2014},
-    {"title":"Gone Girl","type":"Movie","genres":["Suspense"],"rating":8.1,"origin":"USA","platform":"Prime Video","imdbId":"tt2267998","year":2014},
-    {"title":"Breaking Bad","type":"Series","genres":["Crime Thriller"],"rating":9.5,"origin":"USA","platform":"Netflix","imdbId":"tt0903747","year":2013},
-    {"title":"Drishyam (Malayalam)","type":"Movie","genres":["Suspense","Crime Thriller"],"rating":8.3,"origin":"India (Malayalam)","platform":"YouTube","imdbId":"tt3417422","year":2013},
-    {"title":"Prisoners","type":"Movie","genres":["Suspense","Crime Thriller"],"rating":8.2,"origin":"USA","platform":"Prime Video","imdbId":"tt1392214","year":2013},
-    {"title":"Kahaani","type":"Movie","genres":["Suspense","Crime Thriller"],"rating":8.1,"origin":"India (Hindi)","platform":"Prime Video","imdbId":"tt1821480","year":2012},
-    {"title":"Delhi Belly","type":"Movie","genres":["Dark Comedy","Crime Thriller"],"rating":7.5,"origin":"India (Hindi)","platform":"Netflix","imdbId":"tt1855325","year":2011},
-    {"title":"Shutter Island","type":"Movie","genres":["Suspense"],"rating":8.2,"origin":"USA","platform":"Prime Video","imdbId":"tt1130884","year":2010},
-    {"title":"The Dark Knight","type":"Movie","genres":["Crime Thriller"],"rating":9.1,"origin":"USA","platform":"Prime Video","imdbId":"tt0468569","year":2008},
-    {"title":"A Wednesday","type":"Movie","genres":["Crime Thriller","Suspense"],"rating":8.1,"origin":"India (Hindi)","platform":"Netflix","imdbId":"tt1187043","year":2008},
-    {"title":"In Bruges","type":"Movie","genres":["Dark Comedy","Crime Thriller"],"rating":7.9,"origin":"UK / Belgium","platform":"Prime Video","imdbId":"tt0780536","year":2008},
-    {"title":"Hot Fuzz","type":"Movie","genres":["Comedy","Crime Thriller"],"rating":7.8,"origin":"UK","platform":"Prime Video","imdbId":"tt0425112","year":2007},
-    {"title":"The Departed","type":"Movie","genres":["Crime Thriller"],"rating":8.5,"origin":"USA","platform":"Prime Video","imdbId":"tt0407887","year":2006},
-    {"title":"Kung Fu Hustle","type":"Movie","genres":["Comedy"],"rating":7.7,"origin":"China","platform":"Prime Video","imdbId":"tt0373074","year":2004},
-    {"title":"Munna Bhai M.B.B.S.","type":"Movie","genres":["Comedy"],"rating":8.2,"origin":"India (Hindi)","platform":"Netflix","imdbId":"tt0374887","year":2003},
-    {"title":"Snatch","type":"Movie","genres":["Dark Comedy","Crime Thriller"],"rating":8.2,"origin":"UK","platform":"Netflix","imdbId":"tt0208092","year":2000},
-    {"title":"Hera Pheri","type":"Movie","genres":["Comedy"],"rating":8.2,"origin":"India (Hindi)","platform":"Prime Video","imdbId":"tt0240628","year":2000},
-    {"title":"Lock, Stock and Two Smoking Barrels","type":"Movie","genres":["Dark Comedy","Crime Thriller"],"rating":8.1,"origin":"UK","platform":"Prime Video","imdbId":"tt0120735","year":1998},
-    {"title":"Se7en","type":"Movie","genres":["Crime Thriller","Suspense"],"rating":8.6,"origin":"USA","platform":"Prime Video","imdbId":"tt0114369","year":1995},
-    {"title":"Pulp Fiction","type":"Movie","genres":["Crime Thriller","Dark Comedy"],"rating":8.8,"origin":"USA","platform":"Prime Video","imdbId":"tt0110912","year":1994},
-    {"title":"Andaz Apna Apna","type":"Movie","genres":["Comedy"],"rating":8,"origin":"India (Hindi)","platform":"YouTube","imdbId":"tt0109040","year":1994}
+    {
+      "title": "Panchayat",
+      "type": "Series",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 9,
+      "origin": "India (Hindi)",
+      "platform": "Prime Video",
+      "imdbId": "tt12004706",
+      "year": 2025
+    },
+    {
+      "title": "The Family Man",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Comedy"
+      ],
+      "rating": 8.6,
+      "origin": "India (Hindi)",
+      "platform": "Prime Video",
+      "imdbId": "tt9544034",
+      "year": 2025
+    },
+    {
+      "title": "Delhi Crime",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.5,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "year": 2025
+    },
+    {
+      "title": "Black Warrant",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.5,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "year": 2025
+    },
+    {
+      "title": "Dhurandhar",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.2,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "year": 2025,
+      "imdbId": "tt33014583"
+    },
+    {
+      "title": "Squid Game",
+      "type": "Series",
+      "genres": [
+        "Suspense"
+      ],
+      "rating": 7.9,
+      "origin": "South Korea",
+      "platform": "Netflix",
+      "imdbId": "tt10919420",
+      "year": 2025
+    },
+    {
+      "title": "Thudarum",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8,
+      "origin": "India (Malayalam)",
+      "platform": "JioHotstar",
+      "year": 2025
+    },
+    {
+      "title": "Lupin",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 7.5,
+      "origin": "France",
+      "platform": "Netflix",
+      "imdbId": "tt2531336",
+      "year": 2025
+    },
+    {
+      "title": "True Detective",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.8,
+      "origin": "USA",
+      "platform": "JioHotstar",
+      "imdbId": "tt2356777",
+      "year": 2024
+    },
+    {
+      "title": "Mirzapur",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.4,
+      "origin": "India (Hindi)",
+      "platform": "Prime Video",
+      "imdbId": "tt6473300",
+      "year": 2024
+    },
+    {
+      "title": "Asur",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.4,
+      "origin": "India (Hindi)",
+      "platform": "JioHotstar",
+      "year": 2024
+    },
+    {
+      "title": "Maharaja",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.4,
+      "origin": "India (Tamil)",
+      "platform": "Netflix",
+      "year": 2024
+    },
+    {
+      "title": "Lucky Baskhar",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.2,
+      "origin": "India (Telugu)",
+      "platform": "Netflix",
+      "year": 2024
+    },
+    {
+      "title": "Kishkindha Kaandam",
+      "type": "Movie",
+      "genres": [
+        "Suspense",
+        "Crime Thriller"
+      ],
+      "rating": 7.9,
+      "origin": "India (Malayalam)",
+      "platform": "JioHotstar",
+      "year": 2024
+    },
+    {
+      "title": "Aavesham",
+      "type": "Movie",
+      "genres": [
+        "Dark Comedy",
+        "Crime Thriller"
+      ],
+      "rating": 7.7,
+      "origin": "India (Malayalam)",
+      "platform": "Prime Video",
+      "year": 2024
+    },
+    {
+      "title": "Kill",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 7.6,
+      "origin": "India (Hindi)",
+      "platform": "JioHotstar",
+      "year": 2024
+    },
+    {
+      "title": "Fargo",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Dark Comedy"
+      ],
+      "rating": 8.8,
+      "origin": "USA",
+      "platform": "JioHotstar",
+      "imdbId": "tt2802850",
+      "year": 2023
+    },
+    {
+      "title": "Barry",
+      "type": "Series",
+      "genres": [
+        "Dark Comedy",
+        "Crime Thriller"
+      ],
+      "rating": 8.3,
+      "origin": "USA",
+      "platform": "JioHotstar",
+      "imdbId": "tt5348176",
+      "year": 2023
+    },
+    {
+      "title": "Laapataa Ladies",
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 8.2,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "year": 2023
+    },
+    {
+      "title": "Better Call Saul",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Dark Comedy"
+      ],
+      "rating": 9,
+      "origin": "USA",
+      "platform": "Netflix",
+      "imdbId": "tt3032476",
+      "year": 2022
+    },
+    {
+      "title": "Peaky Blinders",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.7,
+      "origin": "UK",
+      "platform": "Netflix",
+      "imdbId": "tt2442560",
+      "year": 2022
+    },
+    {
+      "title": "Ozark",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.4,
+      "origin": "USA",
+      "platform": "Netflix",
+      "imdbId": "tt5071412",
+      "year": 2022
+    },
+    {
+      "title": "Vikram",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.3,
+      "origin": "India (Tamil)",
+      "platform": "JioHotstar",
+      "imdbId": "tt9179552",
+      "year": 2022
+    },
+    {
+      "title": "Kantara",
+      "type": "Movie",
+      "genres": [
+        "Suspense",
+        "Crime Thriller"
+      ],
+      "rating": 8.2,
+      "origin": "India (Kannada)",
+      "platform": "Prime Video",
+      "imdbId": "tt16539454",
+      "year": 2022
+    },
+    {
+      "title": "Glass Onion",
+      "type": "Movie",
+      "genres": [
+        "Suspense",
+        "Comedy"
+      ],
+      "rating": 7.1,
+      "origin": "USA",
+      "platform": "Netflix",
+      "imdbId": "tt11564570",
+      "year": 2022
+    },
+    {
+      "title": "Special Ops",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.6,
+      "origin": "India (Hindi)",
+      "platform": "JioHotstar",
+      "year": 2021
+    },
+    {
+      "title": "Money Heist",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.2,
+      "origin": "Spain",
+      "platform": "Netflix",
+      "imdbId": "tt6468322",
+      "year": 2021
+    },
+    {
+      "title": "Dark",
+      "type": "Series",
+      "genres": [
+        "Suspense",
+        "Crime Thriller"
+      ],
+      "rating": 8.7,
+      "origin": "Germany",
+      "platform": "Netflix",
+      "imdbId": "tt5753856",
+      "year": 2020
+    },
+    {
+      "title": "Mindhunter",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.6,
+      "origin": "USA",
+      "platform": "Netflix",
+      "imdbId": "tt5290382",
+      "year": 2019
+    },
+    {
+      "title": "Sacred Games",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.5,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "imdbId": "tt6077448",
+      "year": 2019
+    },
+    {
+      "title": "Kaithi",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.4,
+      "origin": "India (Tamil)",
+      "platform": "YouTube",
+      "imdbId": "tt10085434",
+      "year": 2019
+    },
+    {
+      "title": "Knives Out",
+      "type": "Movie",
+      "genres": [
+        "Suspense",
+        "Comedy"
+      ],
+      "rating": 7.9,
+      "origin": "USA",
+      "platform": "Netflix",
+      "imdbId": "tt8946378",
+      "year": 2019
+    },
+    {
+      "title": "Badla",
+      "type": "Movie",
+      "genres": [
+        "Suspense",
+        "Crime Thriller"
+      ],
+      "rating": 7.8,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "year": 2019
+    },
+    {
+      "title": "Ratsasan",
+      "type": "Movie",
+      "genres": [
+        "Suspense",
+        "Crime Thriller"
+      ],
+      "rating": 8.3,
+      "origin": "India (Tamil)",
+      "platform": "YouTube",
+      "imdbId": "tt7469718",
+      "year": 2018
+    },
+    {
+      "title": "Andhadhun",
+      "type": "Movie",
+      "genres": [
+        "Dark Comedy",
+        "Suspense",
+        "Crime Thriller"
+      ],
+      "rating": 8.2,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "imdbId": "tt8108198",
+      "year": 2018
+    },
+    {
+      "title": "KGF: Chapter 1",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.1,
+      "origin": "India (Kannada)",
+      "platform": "Prime Video",
+      "imdbId": "tt7838252",
+      "year": 2018
+    },
+    {
+      "title": "Joseph",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 7.8,
+      "origin": "India (Malayalam)",
+      "platform": "YouTube",
+      "year": 2018
+    },
+    {
+      "title": "Sherlock",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 9,
+      "origin": "UK",
+      "platform": "Netflix",
+      "imdbId": "tt1475582",
+      "year": 2017
+    },
+    {
+      "title": "Narcos",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.8,
+      "origin": "USA / Colombia",
+      "platform": "Netflix",
+      "imdbId": "tt2707791",
+      "year": 2017
+    },
+    {
+      "title": "Prison Break",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.3,
+      "origin": "USA",
+      "platform": "JioHotstar",
+      "imdbId": "tt0455275",
+      "year": 2017
+    },
+    {
+      "title": "Vikram Vedha",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.2,
+      "origin": "India (Tamil)",
+      "platform": "Prime Video",
+      "imdbId": "tt6148156",
+      "year": 2017
+    },
+    {
+      "title": "The Nice Guys",
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Crime Thriller"
+      ],
+      "rating": 7.4,
+      "origin": "USA",
+      "platform": "Prime Video",
+      "imdbId": "tt3799694",
+      "year": 2016
+    },
+    {
+      "title": "Drishyam",
+      "type": "Movie",
+      "genres": [
+        "Suspense",
+        "Crime Thriller"
+      ],
+      "rating": 8.2,
+      "origin": "India (Hindi)",
+      "platform": "Prime Video",
+      "imdbId": "tt4430212",
+      "year": 2015
+    },
+    {
+      "title": "Jigarthanda",
+      "type": "Movie",
+      "genres": [
+        "Dark Comedy",
+        "Crime Thriller"
+      ],
+      "rating": 8.2,
+      "origin": "India (Tamil)",
+      "platform": "Prime Video",
+      "year": 2014
+    },
+    {
+      "title": "Gone Girl",
+      "type": "Movie",
+      "genres": [
+        "Suspense"
+      ],
+      "rating": 8.1,
+      "origin": "USA",
+      "platform": "Prime Video",
+      "imdbId": "tt2267998",
+      "year": 2014
+    },
+    {
+      "title": "Breaking Bad",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 9.5,
+      "origin": "USA",
+      "platform": "Netflix",
+      "imdbId": "tt0903747",
+      "year": 2013
+    },
+    {
+      "title": "Drishyam (Malayalam)",
+      "type": "Movie",
+      "genres": [
+        "Suspense",
+        "Crime Thriller"
+      ],
+      "rating": 8.3,
+      "origin": "India (Malayalam)",
+      "platform": "YouTube",
+      "imdbId": "tt3417422",
+      "year": 2013
+    },
+    {
+      "title": "Prisoners",
+      "type": "Movie",
+      "genres": [
+        "Suspense",
+        "Crime Thriller"
+      ],
+      "rating": 8.2,
+      "origin": "USA",
+      "platform": "Prime Video",
+      "imdbId": "tt1392214",
+      "year": 2013
+    },
+    {
+      "title": "Kahaani",
+      "type": "Movie",
+      "genres": [
+        "Suspense",
+        "Crime Thriller"
+      ],
+      "rating": 8.1,
+      "origin": "India (Hindi)",
+      "platform": "Prime Video",
+      "imdbId": "tt1821480",
+      "year": 2012
+    },
+    {
+      "title": "Delhi Belly",
+      "type": "Movie",
+      "genres": [
+        "Dark Comedy",
+        "Crime Thriller"
+      ],
+      "rating": 7.5,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "imdbId": "tt1855325",
+      "year": 2011
+    },
+    {
+      "title": "Shutter Island",
+      "type": "Movie",
+      "genres": [
+        "Suspense"
+      ],
+      "rating": 8.2,
+      "origin": "USA",
+      "platform": "Prime Video",
+      "imdbId": "tt1130884",
+      "year": 2010
+    },
+    {
+      "title": "The Dark Knight",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 9.1,
+      "origin": "USA",
+      "platform": "Prime Video",
+      "imdbId": "tt0468569",
+      "year": 2008
+    },
+    {
+      "title": "A Wednesday",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.1,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "imdbId": "tt1187043",
+      "year": 2008
+    },
+    {
+      "title": "In Bruges",
+      "type": "Movie",
+      "genres": [
+        "Dark Comedy",
+        "Crime Thriller"
+      ],
+      "rating": 7.9,
+      "origin": "UK / Belgium",
+      "platform": "Prime Video",
+      "imdbId": "tt0780536",
+      "year": 2008
+    },
+    {
+      "title": "Hot Fuzz",
+      "type": "Movie",
+      "genres": [
+        "Comedy",
+        "Crime Thriller"
+      ],
+      "rating": 7.8,
+      "origin": "UK",
+      "platform": "Prime Video",
+      "imdbId": "tt0425112",
+      "year": 2007
+    },
+    {
+      "title": "The Departed",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.5,
+      "origin": "USA",
+      "platform": "Prime Video",
+      "imdbId": "tt0407887",
+      "year": 2006
+    },
+    {
+      "title": "Kung Fu Hustle",
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 7.7,
+      "origin": "China",
+      "platform": "Prime Video",
+      "imdbId": "tt0373074",
+      "year": 2004
+    },
+    {
+      "title": "Munna Bhai M.B.B.S.",
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 8.2,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "imdbId": "tt0374887",
+      "year": 2003
+    },
+    {
+      "title": "Snatch",
+      "type": "Movie",
+      "genres": [
+        "Dark Comedy",
+        "Crime Thriller"
+      ],
+      "rating": 8.2,
+      "origin": "UK",
+      "platform": "Netflix",
+      "imdbId": "tt0208092",
+      "year": 2000
+    },
+    {
+      "title": "Hera Pheri",
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 8.2,
+      "origin": "India (Hindi)",
+      "platform": "Prime Video",
+      "imdbId": "tt0240628",
+      "year": 2000
+    },
+    {
+      "title": "Lock, Stock and Two Smoking Barrels",
+      "type": "Movie",
+      "genres": [
+        "Dark Comedy",
+        "Crime Thriller"
+      ],
+      "rating": 8.1,
+      "origin": "UK",
+      "platform": "Prime Video",
+      "imdbId": "tt0120735",
+      "year": 1998
+    },
+    {
+      "title": "Se7en",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller",
+        "Suspense"
+      ],
+      "rating": 8.6,
+      "origin": "USA",
+      "platform": "Prime Video",
+      "imdbId": "tt0114369",
+      "year": 1995
+    },
+    {
+      "title": "Pulp Fiction",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller",
+        "Dark Comedy"
+      ],
+      "rating": 8.8,
+      "origin": "USA",
+      "platform": "Prime Video",
+      "imdbId": "tt0110912",
+      "year": 1994
+    },
+    {
+      "title": "Andaz Apna Apna",
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 8,
+      "origin": "India (Hindi)",
+      "platform": "YouTube",
+      "imdbId": "tt0109040",
+      "year": 1994
+    }
   ]
 }
