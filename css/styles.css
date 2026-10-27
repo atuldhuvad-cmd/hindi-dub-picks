@@ -1,0 +1,21 @@
+:root{--bg:#0b0b10;--card:rgba(255,255,255,.05);--line:rgba(255,255,255,.1);--tx:#ececf1;--mute:#9a9aa8;--gold:#d4af37;--gold2:#f6e27a}
+*{box-sizing:border-box;margin:0}
+body{background:radial-gradient(1200px 600px at 10% -10%,#1d1a10,transparent),var(--bg);color:var(--tx);font:16px/1.4 system-ui,sans-serif;min-height:100vh;padding:0 16px 32px}
+header{max-width:1100px;margin:0 auto;padding:24px 0 8px;position:sticky;top:0;background:linear-gradient(var(--bg) 85%,transparent);z-index:2}
+h1{font-size:1.6rem}
+h1 span{background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+#meta{color:var(--mute);font-size:.8rem;margin:2px 0 12px}
+#q{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--tx);font-size:1rem;backdrop-filter:blur(10px)}
+#q:focus{outline:2px solid var(--gold)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none}
+.chips button{flex:none;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--tx);cursor:pointer;font-size:.85rem}
+.chips button[aria-pressed=true]{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#1a1405;border-color:transparent;font-weight:600}
+main{max-width:1100px;margin:16px auto 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:8px;min-width:0}
+.card h2{font-size:1.05rem;overflow-wrap:anywhere}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--mute);font-size:.82rem;flex-wrap:wrap}
+.rate{color:var(--gold2);font-weight:700;font-size:1rem}
+.tag{padding:2px 8px;border:1px solid var(--line);border-radius:99px;font-size:.72rem;color:var(--tx)}
+.new{background:var(--gold);color:#1a1405;border-color:transparent;font-weight:700}
+.watch{margin-top:auto;text-align:center;padding:10px;border-radius:10px;background:linear-gradient(90deg,var(--gold),var(--gold2));color:#1a1405;font-weight:700;text-decoration:none}
+.empty{grid-column:1/-1;text-align:center;color:var(--mute);padding:40px 0}
