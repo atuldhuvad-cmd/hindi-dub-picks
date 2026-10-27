@@ -1,4 +1,4 @@
-const GENRES = ['Crime Thriller', 'Suspense', 'Comedy'];
+const GENRES = ['Crime Thriller', 'Suspense', 'Comedy', 'Spy Thriller'];
 // ponytail: platform links are search URLs, not deep links -> add per-title "link" in JSON to override
 const SEARCH = {
   'Netflix': t => 'https://www.netflix.com/search?q=' + encodeURIComponent(t),
