@@ -19,3 +19,4 @@ main{max-width:1100px;margin:16px auto 0;display:grid;grid-template-columns:repe
 .new{background:var(--gold);color:#1a1405;border-color:transparent;font-weight:700}
 .watch{margin-top:auto;text-align:center;padding:10px;border-radius:10px;background:linear-gradient(90deg,var(--gold),var(--gold2));color:#1a1405;font-weight:700;text-decoration:none}
 .empty{grid-column:1/-1;text-align:center;color:var(--mute);padding:40px 0}
+footer{max-width:1100px;margin:24px auto 0;color:var(--mute);font-size:.72rem;text-align:center}
