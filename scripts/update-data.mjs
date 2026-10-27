@@ -4,7 +4,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const FILE = new URL('../movies-data.json', import.meta.url);
 const { OMDB_API_KEY: OMDB, TMDB_API_KEY: TMDB } = process.env;
-const MIN = 7.5, MAX_NEW = 5;
+const MIN = 7.5, MAX_NEW = 8;
 if (!OMDB) { console.error('OMDB_API_KEY missing'); process.exit(1); }
 
 const j = async url => { const r = await fetch(url); if (!r.ok) throw new Error(r.status + ' ' + url.split('?')[0]); return r.json(); };
@@ -17,6 +17,7 @@ data.items.forEach(m => delete m.new);
 
 // 1. refresh ratings (skip on title mismatch so a wrong imdbId never overwrites data)
 for (const m of data.items) {
+  if (!m.imdbId) continue; // filled in manually, rating stays as seeded
   try {
     const o = await omdb(m.imdbId);
     if (o.Response !== 'True') continue;
@@ -35,8 +36,9 @@ if (TMDB) {
   const PROV = { 8: 'Netflix', 119: 'Prime Video', 122: 'JioHotstar' };
   const known = new Set(data.items.map(m => m.imdbId));
   let added = 0;
-  for (const [kind, genres] of [['movie', '80,53,35'], ['tv', '80,9648,35']]) {
-    const res = await tmdb(`/discover/${kind}`, `&with_genres=${genres.replace(/,/g, '|')}&watch_region=IN&with_watch_providers=8|119|122&with_watch_monetization_types=flatrate&vote_average.gte=${MIN}&vote_count.gte=1000&sort_by=popularity.desc`);
+  // Indian-origin passes first so South Indian / Hindi titles aren't crowded out by foreign ones
+  for (const [kind, genres, origin] of [['movie', '80,53,35', 'IN'], ['tv', '80,9648,35', 'IN'], ['movie', '80,53,35', ''], ['tv', '80,9648,35', '']]) {
+    const res = await tmdb(`/discover/${kind}`, `${origin ? '&with_origin_country=IN' : ''}&with_genres=${genres.replace(/,/g, '|')}&watch_region=IN&with_watch_providers=8|119|122&with_watch_monetization_types=flatrate&vote_average.gte=${MIN}&vote_count.gte=1000&sort_by=popularity.desc`);
     for (const t of res.results) {
       if (added >= MAX_NEW) break;
       try {
@@ -51,7 +53,7 @@ if (TMDB) {
         if (g.includes(80) || g.includes(53)) gen.push('Crime Thriller');
         if (g.includes(9648)) gen.push('Suspense');
         if (g.includes(35)) gen.push('Comedy');
-        data.items.push({ title: o.Title, type: kind === 'movie' ? 'Movie' : 'Series', genres: gen, rating, origin: o.Country?.split(',')[0] || 'N/A', platform: PROV[p.provider_id], imdbId, new: true });
+        data.items.push({ title: o.Title, type: kind === 'movie' ? 'Movie' : 'Series', genres: gen, rating, origin: /India/.test(o.Country) ? `India (${o.Language?.split(',')[0] || 'Hindi'})` : o.Country?.split(',')[0] || 'N/A', platform: PROV[p.provider_id], imdbId, new: true });
         known.add(imdbId); added++;
       } catch (e) { console.warn('discover failed:', t.id, e.message); }
     }
