@@ -1,7 +1,11 @@
-const CACHE = 'hdp-v10';
+const CACHE = 'hdp-v11';
 const SHELL = ['./', 'index.html', 'css/styles.css', 'js/app.js', 'manifest.json', 'movies-data.json', 'icons/icon-192.png', 'icons/icon-512.png'];
 
-self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())));
+self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => Promise.all(SHELL.map(async path => {
+  const r = await fetch(`${path}?v=${CACHE}`, { cache: 'reload' });
+  if (!r.ok) throw new Error(`Could not cache ${path}`);
+  await c.put(path, r);
+}))).then(() => self.skipWaiting())));
 self.addEventListener('activate', e => e.waitUntil(
   caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('hdp-') && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 
