@@ -15,9 +15,11 @@ const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 const data = JSON.parse(await readFile(FILE, 'utf8'));
 data.items.forEach(m => delete m.new);
 
+let ok = 0, tried = 0;
 // 1. refresh ratings (skip on title mismatch so a wrong imdbId never overwrites data)
 for (const m of data.items) {
   if (!m.imdbId) continue; // filled in manually, rating stays as seeded
+  tried++;
   try {
     const o = await omdb(m.imdbId);
     if (o.Response !== 'True') continue;
@@ -26,9 +28,12 @@ for (const m of data.items) {
     if (!norm(o.Title).includes(norm(m.title.split(' (')[0])) && !norm(m.title).includes(norm(o.Title))) {
       console.warn(`ID mismatch, skipped: ${m.title} -> ${o.Title}`); continue;
     }
-    m.rating = r;
+    m.rating = r; ok++;
   } catch (e) { console.warn('rating failed:', m.title, e.message); }
 }
+
+if (tried && !ok) { console.error('No ratings refreshed; leaving data unchanged'); process.exit(1); }
+console.log(`ratings refreshed: ${ok}/${tried}`);
 
 // 2. discover new titles available on Netflix/Prime/JioHotstar in India
 // ponytail: TMDB can't confirm a Hindi dub exists -> new entries are flagged "new"; verify before keeping
