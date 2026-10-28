@@ -9,9 +9,13 @@ const SEARCH = {
 const $ = id => document.getElementById(id);
 const REGIONS = ['Hindi Original', 'South Indian (Hindi Dub)', 'International (Hindi Dub)'];
 const region = m => /^India \(Hindi/.test(m.origin) ? REGIONS[0] : /^India/.test(m.origin) ? REGIONS[1] : REGIONS[2];
-const state = { items: [], q: '', genre: 'All', platform: 'All', region: 'All' };
+const state = { items: [], updated: '', q: '', genre: 'All', platform: 'All', region: 'All', favoritesOnly: false, sort: 'newest' };
+let favorites;
+try { favorites = new Set(JSON.parse(localStorage.getItem('hdp-favorites') || '[]')); } catch { favorites = new Set(); }
 
 const link = m => (/^https:\/\//.test(m.link || '') ? m.link : (SEARCH[m.platform] || SEARCH.YouTube)(m.title));
+// ponytail: favorites are device-local and title/year keyed -> add versioned export/sync only if requested
+const key = m => `${m.title}|${m.year}`;
 
 function chips(el, values, key) {
   el.replaceChildren(...['All', ...values].map(v => {
@@ -26,12 +30,22 @@ function chips(el, values, key) {
 function card(m) {
   const c = document.createElement('article'); c.className = 'card';
   const mk = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; e.textContent = txt; return e; };
+  const saved = favorites.has(key(m));
+  const title = mk('div', 'title-row', '');
+  const favorite = mk('button', 'favorite', saved ? 'Saved' : 'Save');
+  favorite.type = 'button'; favorite.setAttribute('aria-pressed', saved); favorite.setAttribute('aria-label', `${saved ? 'Remove' : 'Add'} ${m.title} ${saved ? 'from' : 'to'} favorites`);
+  favorite.onclick = () => {
+    saved ? favorites.delete(key(m)) : favorites.add(key(m));
+    try { localStorage.setItem('hdp-favorites', JSON.stringify([...favorites])); } catch {}
+    render();
+  };
+  title.append(mk('h2', '', m.title), favorite);
   const top = mk('div', 'row', ''); top.append(mk('span', 'rate', '★ ' + Number(m.rating).toFixed(1)), mk('span', 'tag', m.type + ' · ' + m.year));
   if (m.new) top.append(mk('span', 'tag new', 'NEW'));
   const tags = mk('div', 'row', ''); m.genres.forEach(g => tags.append(mk('span', 'tag', g)));
   const a = mk('a', 'watch', 'Watch on ' + m.platform);
   a.href = link(m); a.target = '_blank'; a.rel = 'noopener noreferrer';
-  c.append(mk('h2', '', m.title), top, tags, mk('div', 'row', 'Origin: ' + m.origin), mk('div', 'row', 'Source: ' + m.platform), a);
+  c.append(title, top, tags, mk('div', 'row', 'Origin: ' + m.origin), mk('div', 'row', 'Source: ' + m.platform), a);
   return c;
 }
 
@@ -41,8 +55,12 @@ function render() {
     .filter(m => (state.genre === 'All' || m.genres.some(g => g.includes(state.genre)))
       && (state.platform === 'All' || m.platform === state.platform)
       && (state.region === 'All' || region(m) === state.region)
+      && (!state.favoritesOnly || favorites.has(key(m)))
       && (m.title + ' ' + m.origin).toLowerCase().includes(q))
-    .sort((a, b) => b.year - a.year || b.rating - a.rating);
+    .sort(state.sort === 'rating' ? (a, b) => b.rating - a.rating || b.year - a.year
+      : state.sort === 'title' ? (a, b) => a.title.localeCompare(b.title)
+      : (a, b) => b.year - a.year || b.rating - a.rating);
+  $('meta').textContent = `${list.length} of ${state.items.length} titles · updated ${state.updated}`;
   if (list.length) $('grid').replaceChildren(...list.map(card));
   else { const e = document.createElement('p'); e.className = 'empty'; e.textContent = 'No matches.'; $('grid').replaceChildren(e); }
 }
@@ -52,7 +70,7 @@ async function init() {
     // cache-busting is handled by the service worker (network-first for this file)
     const d = await (await fetch('movies-data.json')).json();
     state.items = d.items;
-    $('meta').textContent = `${d.items.length} titles · updated ${d.updated}`;
+    state.updated = d.updated;
     chips($('regions'), REGIONS, 'region');
     chips($('genres'), GENRES, 'genre');
     chips($('platforms'), [...new Set(d.items.map(m => m.platform))].sort(), 'platform');
@@ -61,5 +79,7 @@ async function init() {
 }
 
 $('q').oninput = e => { state.q = e.target.value; render(); };
+$('favorites').onclick = e => { state.favoritesOnly = !state.favoritesOnly; e.currentTarget.setAttribute('aria-pressed', state.favoritesOnly); render(); };
+$('sort').onchange = e => { state.sort = e.target.value; render(); };
 init();
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');

@@ -1,5 +1,5 @@
-const CACHE = 'hdp-v6';
-const SHELL = ['./', 'index.html', 'css/styles.css', 'js/app.js', 'manifest.json', 'icons/icon-192.png', 'icons/icon-512.png'];
+const CACHE = 'hdp-v9';
+const SHELL = ['./', 'index.html', 'css/styles.css', 'js/app.js', 'manifest.json', 'movies-data.json', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())));
 self.addEventListener('activate', e => e.waitUntil(
@@ -11,7 +11,7 @@ self.addEventListener('fetch', e => {
   // data: network-first so the weekly update shows up; shell: cache-first
   if (u.pathname.endsWith('movies-data.json')) {
     e.respondWith(fetch(e.request, { cache: 'no-cache' }).then(r => {
-      if (r.ok) { const copy = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); return r; }
+      if (r.ok) return caches.open(CACHE).then(c => c.put(e.request, r.clone())).then(() => r, () => r);
       return caches.match(e.request).then(c => c || r); // keep last good dataset on HTTP errors
     }).catch(() => caches.match(e.request)));
   } else {

@@ -16,6 +16,16 @@
   <h1>Hindi Dub <span>Picks</span></h1>
   <p id="meta">Loading…</p>
   <input id="q" type="search" placeholder="Search title, origin…" aria-label="Search">
+  <div class="controls">
+    <button id="favorites" type="button" aria-pressed="false">Favorites only</button>
+    <label>Sort
+      <select id="sort">
+        <option value="newest">Newest</option>
+        <option value="rating">Highest rated</option>
+        <option value="title">Title A–Z</option>
+      </select>
+    </label>
+  </div>
   <div class="chips" id="regions" aria-label="Region"></div>
   <div class="chips" id="genres" aria-label="Genre"></div>
   <div class="chips" id="platforms" aria-label="Platform"></div>
