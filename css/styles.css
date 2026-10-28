@@ -17,7 +17,7 @@ h1 span{background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-backg
 .chips button[aria-pressed=true]{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#1a1405;border-color:transparent;font-weight:600}
 main{max-width:1100px;margin:16px auto 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:8px;min-width:0}
-.card h2{font-size:1.05rem;overflow-wrap:anywhere}.title-row{display:flex;align-items:start;justify-content:space-between;gap:8px}
+.card h2{font-size:1.05rem;overflow-wrap:anywhere}.title-row{display:flex;align-items:start;justify-content:space-between;gap:8px}.title-actions{display:flex;flex:none;gap:6px}
 .favorite{flex:none;border:1px solid var(--line);border-radius:9px;background:transparent;color:var(--tx);padding:5px 9px;cursor:pointer}.favorite[aria-pressed=true]{background:var(--gold);color:#1a1405;border-color:transparent;font-weight:700}
 .row{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--mute);font-size:.82rem;flex-wrap:wrap}
 .rate{color:var(--gold2);font-weight:700;font-size:1rem}

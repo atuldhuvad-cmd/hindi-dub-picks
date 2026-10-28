@@ -9,9 +9,10 @@ const SEARCH = {
 const $ = id => document.getElementById(id);
 const REGIONS = ['Hindi Original', 'South Indian (Hindi Dub)', 'International (Hindi Dub)'];
 const region = m => /^India \(Hindi/.test(m.origin) ? REGIONS[0] : /^India/.test(m.origin) ? REGIONS[1] : REGIONS[2];
-const state = { items: [], updated: '', q: '', genre: 'All', platform: 'All', region: 'All', favoritesOnly: false, sort: 'newest' };
-let favorites;
+const state = { items: [], updated: '', q: '', genre: 'All', platform: 'All', region: 'All', favoritesOnly: false, showWatched: false, sort: 'newest' };
+let favorites, watched;
 try { favorites = new Set(JSON.parse(localStorage.getItem('hdp-favorites') || '[]')); } catch { favorites = new Set(); }
+try { watched = new Set(JSON.parse(localStorage.getItem('hdp-watched') || '[]')); } catch { watched = new Set(); }
 
 const link = m => (/^https:\/\//.test(m.link || '') ? m.link : (SEARCH[m.platform] || SEARCH.YouTube)(m.title));
 // ponytail: favorites are device-local and title/year keyed -> add versioned export/sync only if requested
@@ -31,7 +32,9 @@ function card(m) {
   const c = document.createElement('article'); c.className = 'card';
   const mk = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; e.textContent = txt; return e; };
   const saved = favorites.has(key(m));
+  const seen = watched.has(key(m));
   const title = mk('div', 'title-row', '');
+  const actions = mk('div', 'title-actions', '');
   const favorite = mk('button', 'favorite', saved ? 'Saved' : 'Save');
   favorite.type = 'button'; favorite.setAttribute('aria-pressed', saved); favorite.setAttribute('aria-label', `${saved ? 'Remove' : 'Add'} ${m.title} ${saved ? 'from' : 'to'} favorites`);
   favorite.onclick = () => {
@@ -39,7 +42,15 @@ function card(m) {
     try { localStorage.setItem('hdp-favorites', JSON.stringify([...favorites])); } catch {}
     render();
   };
-  title.append(mk('h2', '', m.title), favorite);
+  const watchedButton = mk('button', 'favorite', seen ? 'Unwatch' : 'Watched');
+  watchedButton.type = 'button'; watchedButton.setAttribute('aria-pressed', seen); watchedButton.setAttribute('aria-label', `${seen ? 'Restore' : 'Mark'} ${m.title} ${seen ? 'to the list' : 'as watched'}`);
+  watchedButton.onclick = () => {
+    seen ? watched.delete(key(m)) : watched.add(key(m));
+    try { localStorage.setItem('hdp-watched', JSON.stringify([...watched])); } catch {}
+    render();
+  };
+  actions.append(favorite, watchedButton);
+  title.append(mk('h2', '', m.title), actions);
   const top = mk('div', 'row', ''); top.append(mk('span', 'rate', '★ ' + Number(m.rating).toFixed(1)), mk('span', 'tag', m.type + ' · ' + m.year));
   if (m.new) top.append(mk('span', 'tag new', 'NEW'));
   const tags = mk('div', 'row', ''); m.genres.forEach(g => tags.append(mk('span', 'tag', g)));
@@ -56,11 +67,13 @@ function render() {
       && (state.platform === 'All' || m.platform === state.platform)
       && (state.region === 'All' || region(m) === state.region)
       && (!state.favoritesOnly || favorites.has(key(m)))
+      && (state.showWatched || !watched.has(key(m)))
       && (m.title + ' ' + m.origin).toLowerCase().includes(q))
     .sort(state.sort === 'rating' ? (a, b) => b.rating - a.rating || b.year - a.year
       : state.sort === 'title' ? (a, b) => a.title.localeCompare(b.title)
       : (a, b) => b.year - a.year || b.rating - a.rating);
   $('meta').textContent = `${list.length} of ${state.items.length} titles · updated ${state.updated}`;
+  $('watched').textContent = `${state.showWatched ? 'Hide' : 'Show'} watched (${watched.size})`;
   if (list.length) $('grid').replaceChildren(...list.map(card));
   else { const e = document.createElement('p'); e.className = 'empty'; e.textContent = 'No matches.'; $('grid').replaceChildren(e); }
 }
@@ -80,6 +93,7 @@ async function init() {
 
 $('q').oninput = e => { state.q = e.target.value; render(); };
 $('favorites').onclick = e => { state.favoritesOnly = !state.favoritesOnly; e.currentTarget.setAttribute('aria-pressed', state.favoritesOnly); render(); };
+$('watched').onclick = e => { state.showWatched = !state.showWatched; e.currentTarget.setAttribute('aria-pressed', state.showWatched); render(); };
 $('sort').onchange = e => { state.sort = e.target.value; render(); };
 init();
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');

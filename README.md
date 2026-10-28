@@ -6,5 +6,5 @@
 - Weekly update: add repo secrets `OMDB_API_KEY` (omdbapi.com, free) and optionally `TMDB_API_KEY` (themoviedb.org, free). Workflow `.github/workflows/weekly-update.yml` runs Mondays 03:00 UTC (or manually via Actions → Run workflow), commits `movies-data.json`; the app fetches it network-first, so no redeploy needed.
 - Script: refreshes ratings for existing `imdbId`s, and (with TMDB key) adds up to 8 recent Indian-origin titles ≥7.0 on Netflix/Prime/JioHotstar India flagged `"new": true`.
 - Caveats: seed ratings/platforms are approximate; Hindi-dub availability can't be verified by any free API — check new entries. Watch buttons are platform search links; set `"link": "https://..."` on an item for a deep link.
-- Favorites stay on this device in localStorage. Search, region, genre and platform filters can be combined with favorites and sorting.
+- Favorites and watched titles stay on this device in localStorage. Watched titles are hidden by default and can be shown or restored. Search, region, genre and platform filters can be combined with favorites and sorting.
 - `updated` is the run date; the run fails if no rating could be refreshed. Bump `CACHE` in `sw.js` when changing shell files.
