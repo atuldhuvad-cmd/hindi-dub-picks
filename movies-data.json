@@ -312,7 +312,7 @@
         "Suspense",
         "Crime Thriller"
       ],
-      "rating": 8.2,
+      "rating": 8.1,
       "origin": "India (Kannada)",
       "platform": "Prime Video",
       "imdbId": "tt15327088",
@@ -915,7 +915,7 @@
         "Dark Comedy",
         "Crime Thriller"
       ],
-      "rating": 7.5,
+      "rating": 7.6,
       "origin": "India (Hindi)",
       "platform": "Netflix",
       "imdbId": "tt1934231",
@@ -1130,6 +1130,45 @@
       "platform": "YouTube",
       "imdbId": "tt0109117",
       "year": 1994
+    },
+    {
+      "title": "Dhurandhar: The Revenge",
+      "type": "Movie",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 8.2,
+      "origin": "India (Hindi)",
+      "platform": "Netflix",
+      "imdbId": "tt39139925",
+      "year": 2026,
+      "new": true
+    },
+    {
+      "title": "Superboys of Malegaon",
+      "type": "Movie",
+      "genres": [
+        "Comedy"
+      ],
+      "rating": 7.7,
+      "origin": "India (Hindi)",
+      "platform": "Prime Video",
+      "imdbId": "tt28007064",
+      "year": 2025,
+      "new": true
+    },
+    {
+      "title": "Khakee: The Bengal Chapter",
+      "type": "Series",
+      "genres": [
+        "Crime Thriller"
+      ],
+      "rating": 7.5,
+      "origin": "India (N/A)",
+      "platform": "Netflix",
+      "imdbId": "tt34569030",
+      "year": 2025,
+      "new": true
     }
   ]
 }
