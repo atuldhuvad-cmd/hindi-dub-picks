@@ -10,7 +10,7 @@ if (!OMDB) { console.error('OMDB_API_KEY missing'); process.exit(1); }
 const j = async url => { const r = await fetch(url); if (!r.ok) throw new Error(r.status + ' ' + url.split('?')[0]); return r.json(); };
 const omdb = id => j(`https://www.omdbapi.com/?apikey=${OMDB}&i=${id}`);
 const tmdb = (p, q = '') => j(`https://api.themoviedb.org/3${p}?api_key=${TMDB}${q}`);
-const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+const norm = s => s.toLowerCase().replace(/se7en/g, 'seven').replace(/[^a-z0-9]/g, '');
 
 const data = JSON.parse(await readFile(FILE, 'utf8'));
 data.items.forEach(m => delete m.new);
@@ -45,8 +45,9 @@ if (TMDB) {
   const since = new Date(Date.now() - 2 * 365 * 864e5).toISOString().slice(0, 10); // only titles from the last ~2 years
   // Indian-origin only: foreign discovery returned mostly non-crime/non-dub noise
   for (const [kind, genres, origin] of [['movie', '80,53,35', 'IN'], ['tv', '80,9648,35', 'IN']]) {
-    const res = await tmdb(`/discover/${kind}`, `${origin ? '&with_origin_country=IN' : ''}&with_genres=${genres.replace(/,/g, '|')}&watch_region=IN&with_watch_providers=8|119|122&with_watch_monetization_types=flatrate&vote_average.gte=${MIN}&vote_count.gte=300&${kind === 'movie' ? 'primary_release_date' : 'first_air_date'}.gte=${since}&sort_by=popularity.desc`);
-    for (const t of res.results) {
+    const minVotes = kind === 'movie' ? 50 : 20;
+    const res = await tmdb(`/discover/${kind}`, `${origin ? '&with_origin_country=IN' : ''}&with_genres=${genres.replace(/,/g, '|')}&watch_region=IN&with_watch_providers=8|119|122&with_watch_monetization_types=flatrate&vote_average.gte=${MIN}&vote_count.gte=${minVotes}&${kind === 'movie' ? 'primary_release_date' : 'first_air_date'}.gte=${since}&sort_by=popularity.desc`);
+    for (const t of res.results || []) {
       if (added >= MAX_NEW) break;
       try {
         const imdbId = kind === 'movie' ? (await tmdb(`/movie/${t.id}/external_ids`)).imdb_id : (await tmdb(`/tv/${t.id}/external_ids`)).imdb_id;
@@ -60,11 +61,13 @@ if (TMDB) {
         if (g.includes(80) || g.includes(53)) gen.push('Crime Thriller');
         if (g.includes(9648)) gen.push('Suspense');
         if (g.includes(35)) gen.push('Comedy');
+        if (!gen.length) gen.push('Suspense');
         data.items.push({ title: o.Title, type: kind === 'movie' ? 'Movie' : 'Series', genres: gen, rating, origin: /India/.test(o.Country) ? `India (${o.Language?.split(',')[0] || 'Hindi'})` : o.Country?.split(',')[0] || 'N/A', platform: PROV[p.provider_id], imdbId, year: parseInt(o.Year) || new Date().getFullYear(), new: true });
         known.add(imdbId); added++;
       } catch (e) { console.warn('discover failed:', t.id, e.message); }
     }
   }
+  console.log(`discovered new titles: ${added}`);
 }
 
 data.updated = new Date().toISOString().slice(0, 10);
